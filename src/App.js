@@ -56,19 +56,21 @@ class App extends Component {
   }
 
   render() {
-    const style= {
-      backgroundColor: 'white',
-      font: 'inherit',
-      border: '1px solid black',
-      padding: '8px',
-      cursor: 'pointer'
-      // ':hover': {
-      //   backgroundColor: 'lightgreen',
-      //   color: 'black'
-      // }
-    }
+    // const style= {
+    //   backgroundColor: 'white',
+    //   font: 'inherit',
+    //   border: '1px solid black',
+    //   padding: '8px',
+    //   cursor: 'pointer'
+    //   // ':hover': {
+    //   //   backgroundColor: 'lightgreen',
+    //   //   color: 'black'
+    //   // }
+    // }
 
     let persons = null;
+    let btnClass='';
+
     if(this.state.showPersons) {
       persons = (
         <div>
@@ -82,12 +84,14 @@ class App extends Component {
      </div>
       );
 
-      style.backgroundColor = 'green';
-      style.color='white';
+      // style.backgroundColor = 'green';
+      // style.color='white';
       // style[':hover'] = {
       //   backgroundColor: 'lightred',
       //   color: 'black'
       // }
+
+      btnClass=classes.Red;
     }
 
     const assignedClasses = [];
@@ -102,7 +106,7 @@ class App extends Component {
          <div className={classes.App}>
         <h1>his </h1>
         <p className = {assignedClasses.join(' ')}>this is working</p>
-        <button onClick={this.togglePersonsHandler}>Switch Name</button>
+        <button className={btnClass} onClick={this.togglePersonsHandler}>Switch Name</button>
       {persons}
       </div>
      
